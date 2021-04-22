@@ -2,11 +2,25 @@ import { useState, useEffect, useCallback } from 'react';
 import {  } from '@material-ui/core';
 import {  } from '@material-ui/icons';
 import Style from '../components/ActiveAlarm.module.css';
-
+import bell from "../content/images/bell-icon.png";
+import wave from '../content/images/blue-wave.png';
 const ActiveAlarm = (props) => {
 
     return (
-        <section>
+        <section className={Style.activeAlarm}>
+
+            <img src={wave} className={Style.waveIcon}></img>
+
+
+            <section className={Style.alarmContainer}>
+                <figure className={Style.swing}>
+                    <img src={bell} alt="Bell" className={Style.bellIcon}></img>
+                </figure>
+                <h1 className={Style.alarmTime}>06.00</h1>
+                <p>Good Morning Sunshine</p>
+            </section>
+
+            <button className={Style.stopBtn}>Stop</button>
 
         </section>
     )
