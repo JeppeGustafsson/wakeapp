@@ -1,12 +1,18 @@
 .Info {
-    padding: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 15rem);
+    padding: 7rem;
     text-align: center;
 }
 
 .Logo {
     max-width: 300px;
-    justify-content: center;
-    padding-top: 11rem;
     height: 12rem;
+    padding: 4rem;
 }
+
+p {
+    color: rgb(232, 231, 231);
+}
+
 
