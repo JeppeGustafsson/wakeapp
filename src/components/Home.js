@@ -10,7 +10,11 @@ const Home = (props) => {
         <section>
 
             <h2 className={Style.logo}>Wakeapp</h2>
-            <Alarm />
+            {
+                props.alarms.map(alarm => {
+                    return <Alarm message={alarm.message} time={alarm.time} day={alarm.date} />
+                })
+            }
         </section>
     )
 };

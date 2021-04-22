@@ -20,7 +20,7 @@ const Alarm = (props) => {
 
             <section className={Style.firstRow}>
 
-                <h3 className={Style.alarmTime}>06.00</h3>
+                <h3 className={Style.alarmTime}>{props.time}</h3>
 
                 <label className={Style.switchOnOff}>
                     <input type="checkbox"></input>
@@ -29,7 +29,8 @@ const Alarm = (props) => {
                 
             </section>
 
-            <p className={Style.alarmFor}>Wake up for work</p>
+            <p className={Style.alarmFor}>{props.message}</p>
+            <p className={Style.alarmFor}>{props.day}</p>
 
         </section>
     )
