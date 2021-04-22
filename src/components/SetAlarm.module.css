@@ -27,6 +27,11 @@
 }
 
 .Logo {
-    max-width: 300px;
+    max-width: 250px;
     cursor: pointer;
+}
+
+.Submit {
+    background-color: #2b2b2b !important;
+    margin: 1.5rem 0;
 }

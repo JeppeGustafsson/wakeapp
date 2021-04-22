@@ -23,6 +23,7 @@ const SetAlarm = (props) => {
             day: props.date
         }
         props.addAlarm(alarmObject);
+        history.push("/");
     }
 
     return (
@@ -51,7 +52,8 @@ const SetAlarm = (props) => {
                 </Button>
             </ButtonGroup>
             <Divider />
-            <img onClick={() => handleClick()} src={logo} className={Style.Logo} />
+            <img src={logo} className={Style.Logo} />
+            <Button className={Style.Submit} onClick={() => handleClick()} color="secondary" variant="contained" disableElevation>Add alarm</Button>
         </section>
             <footer className={Style.Footer}>
                     <Radio
