@@ -21,11 +21,11 @@ const TopNav = (props) => {
     }
     return (
         <div className={activeMenu === false ?
-            Style.wrap  : Style.wrapper + ' wrapper'}>
+            Style.wrap + ' wrapp'  : Style.wrapper + ' wrapper'}>
             <header className={Style.header}>
 
                 <section className={activeMenu === false ?
-                    Style.hamburger + ' not-active' : Style.hamburger + ' active'}
+                    Style.hamburger + ' not-activee' : Style.hamburger + ' activee'}
                     onClick={activeMenu === false ?
                         () => setActiveMenu(true) :
                         () => setActiveMenu(false)}>

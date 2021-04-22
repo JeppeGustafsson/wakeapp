@@ -1,9 +1,10 @@
 .header {
     background-color: #2B2B2B;
     height: 75px;
-    margin-top: 74px;
-    position: sticky;
-    z-index: 1;
+    z-index: 9999;
+    position: absolute;
+    width: 375px;
+    top: 0px;
 }
 
 .line {
@@ -14,24 +15,24 @@
     transition: 0.15s ease;
     border-radius: 10px;
 }
-:global(.active) .active {
+:global(.activee) .activee {
     position: fixed;
 }
 
-:global(.active) .line {
+:global(.activee) .line {
     margin: -5px 0;
 }
 
-:global(.active) .line:nth-of-type(2) {
+:global(.activee) .line:nth-of-type(2) {
     opacity: 0;
 }
 
-:global(.active) .line:nth-of-type(1) {
+:global(.activee) .line:nth-of-type(1) {
     animation: rotateOne 0.3s ease forwards alternate;
     animation-delay: 0.15s;
 }
 
-:global(.active) .line:nth-of-type(3) {
+:global(.activee) .line:nth-of-type(3) {
     animation: rotateTwo 0.3s ease forwards alternate;
     animation-delay: 0.15s;
 }
@@ -55,7 +56,6 @@
 }
 
 nav{
-    position: fixed;
     top: 0;
     display: block;
     transform: translateY(-100%);
@@ -63,15 +63,17 @@ nav{
   }
 
 .navv{
-    top: 50%;
+    position: relative;
     width: 375px;
+    top: 50rem;
+    z-index: 999;
 }
+
 
   .nav_menu {
 
-    position: relative;
     top: 411px;
-    height: 773px;
+    height: 800px;
     background-color: #2B2B2B;
     display: flex;
     flex-direction: column;
@@ -88,21 +90,22 @@ nav{
 
   }
 
-  :global(.active) .hamburger {
+  :global(.activee) .hamburger {
       position: absolute;
   }
 
-  section:global(.active) {
+  section:global(.activee) {
     position: absolute;
-    top: 35px;
+    top: 46px;
   }
 
 .hamburger {
     position: absolute;
     top: 20px;
-    padding-left: 30px;
+    left: 20px;
     z-index: 999;
 }
+
 
 section:global(.close-menu) {
     display: flex;
@@ -113,4 +116,10 @@ section:global(.close-menu) {
 
 div:global(.wrapper) {
     position: absolute;
+}
+
+div:global(.wrapp) {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
