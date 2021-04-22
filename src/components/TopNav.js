@@ -43,8 +43,7 @@ const TopNav = (props) => {
 
                         <Link to="/alarm-settings" className={Style.link}>Favourites</Link>
                         <Link to="/alarm-settings" className={Style.link}>Set alarm/Schedule</Link>
-                        <Link to="/alarm-settings" className={Style.link}>Info</Link>
-                  
+                        <Link to="/info-page" className={Style.link}>Info</Link>
                     </section>
 
                 </nav>
