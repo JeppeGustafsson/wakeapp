@@ -1,5 +1,4 @@
 import Style from '../components/Info.module.css';
-import TopNav from './TopNav';
 import logo from '../content/images/clock.png';
 
 
