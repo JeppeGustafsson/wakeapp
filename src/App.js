@@ -8,6 +8,8 @@ import SetMessageAndTime from './components/SetMessageAndTime';
 import SetDate from './components/SetDate';
 import ActiveAlarm from './components/ActiveAlarm';
 import './App.css';
+import TopNav from './components/TopNav';
+
 
 function App() {
   const [alarms, setAlarms] = useState([]);
@@ -53,7 +55,9 @@ function App() {
   },[]);
 
   return (
+    
     <div className="App">
+      <TopNav />
       <Switch>
         <Route exact path="/">
           <Home alarms={alarms} />
