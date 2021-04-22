@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
 import Home from './components/Home';
+import Info from './components/Info';
 import SetAlarm from './components/SetAlarm';
 import SetSound from './components/SetSound';
 import SetMessageAndTime from './components/SetMessageAndTime';
@@ -20,6 +21,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home alarms={alarms} />
+        </Route>
+        <Route path="/info-page">
+          <Info />
         </Route>
         <Route path="/alarm-settings">
           <SetAlarm 
