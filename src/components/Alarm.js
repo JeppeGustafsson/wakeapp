@@ -5,8 +5,31 @@ import Style from '../components/Alarm.module.css';
 
 const Alarm = (props) => {
 
+    const [cardClass, setCardClass] = useState("active");
+
+    const changeBackground = () => {
+        if (cardClass === "inactive") {
+            setCardClass("active")
+        } else {
+            setCardClass("inactive")
+        }
+    }
+
     return (
-        <section>
+        <section className={cardClass}>
+
+            <section className={Style.firstRow}>
+
+                <h3 className={Style.alarmTime}>06.00</h3>
+
+                <label className={Style.switchOnOff}>
+                    <input type="checkbox"></input>
+                    <span className={Style.sliderOnOff} onClick={changeBackground}></span>
+                </label>
+                
+            </section>
+
+            <p className={Style.alarmFor}>Wake up for work</p>
 
         </section>
     )
