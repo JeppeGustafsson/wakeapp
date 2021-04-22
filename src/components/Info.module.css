@@ -1,0 +1,12 @@
+.Info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.Logo {
+    max-width: 300px;
+    justify-content: center;
+    padding-top: 11rem;
+    height: 12rem;
+}
+
