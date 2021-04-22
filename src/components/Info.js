@@ -10,7 +10,8 @@ const Info = (props) => {
             <TopNav />
             <section>
                 <h3>Info</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, lorem in placerat imperdiet, arcu velit tincidunt magna, ac sagittis tortor lectus ullamcorper diam. Etiam lacinia, erat porttitor faucibus vulputate, ex turpis placerat diam, eu finibus quam enim a odio. Nunc ultricies posuere dolor sit amet vestibulum. Nam ex dui, egestas id lobortis et, vehicula eu tellus. Phasellus rutrum, eros id ultrices commodo, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, lorem in placerat imperdiet, arcu velit tincidunt magna, ac sagittis tortor lectus ullamcorper diam. Etiam lacinia, erat porttitor faucibus vulputate, ex turpis placerat diam, eu finibus quam enim a odio. Nunc ultricies posuere dolor sit amet vestibulum. Nam ex dui, egestas id lobortis et, vehicula eu tellus. Phasellus rutrum, eros id ultrices commodo </p>
+                <p>Markus, Cassandra, Jesper & Marica i FED20 har uppmärksammat att många använder sig av sina telefoner när de ska sätta sitt alarm. Många har problem med att vakna i tid på morgonen och det finns en stor brist på appar till mobiltelfoner som har huvudfokuset “VAKNA I TID”. </p>
+                <p>Svenskarna fortsätter att använda mobilen mer och mer. 78 procent av befolkningen kopplar upp sig via mobilen, 65 procent varje dag. 41 procent av svenskarna har en Iphone mot 37 procent som väljer Android. Bland de upp till 25 år är Iphone i klar majoritet, medan Android är vanligare bland de över 46 år.</p>
             </section >
             <img src={logo} className={Style.Logo} />
         </div>
