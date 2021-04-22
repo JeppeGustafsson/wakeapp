@@ -24,7 +24,7 @@ const SetSound = (props) => {
     return (
         <main>
             <section className={Style.PickSound}>
-                <h3>Pick day for alarm</h3>
+                <h3>Pick alarm signal</h3>
                 <Divider className="mb-2" />
                 <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
                     <h4>Dog barks</h4>
