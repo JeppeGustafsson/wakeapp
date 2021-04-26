@@ -63,9 +63,6 @@ function App() {
       <div className="App">
         <TopNav />
         <Switch>
-          <Route exact path="/">
-            <Intro />
-          </Route>
           <Route exact path="/alarm-page">
             <Home alarms={alarms} />
           </Route>
@@ -97,6 +94,11 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path="/">
+          <div className="App">
+            <Intro />
+          </div>
+        </Route>
         <Route path="/active-alarm">
           <div className="App">
             <ActiveAlarm alarm={activeAlarm} />
