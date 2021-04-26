@@ -9,6 +9,8 @@ import SetDate from './components/SetDate';
 import ActiveAlarm from './components/ActiveAlarm';
 import './App.css';
 import TopNav from './components/TopNav';
+import Intro from './components/Intro';
+
 
 
 function App() {
@@ -30,8 +32,8 @@ function App() {
 
   const triggerAlarm = () => {
     let d = new Date();
-    let weekdays = ["Sunday", "Monday", "Tuesday", 
-    "Wednesday", "Thursday", "Friday", "Saturday"];
+    let weekdays = ["Sunday", "Monday", "Tuesday",
+      "Wednesday", "Thursday", "Friday", "Saturday"];
     let h = addZero(d.getHours());
     let m = addZero(d.getMinutes());
     let time = h + ':' + m;
@@ -52,21 +54,24 @@ function App() {
 
   useEffect(() => {
     interval();
-  },[]);
+  }, []);
 
   return (
-    
+
     <div className="App">
       <TopNav />
       <Switch>
         <Route exact path="/">
+          <Intro />
+        </Route>
+        <Route exact path="/alarm-page">
           <Home alarms={alarms} />
         </Route>
         <Route path="/info-page">
           <Info />
         </Route>
         <Route path="/alarm-settings">
-          <SetAlarm 
+          <SetAlarm
             message={selectedMessage}
             time={selectedTime}
             date={selectedDate}
