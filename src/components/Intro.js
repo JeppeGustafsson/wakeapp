@@ -10,7 +10,7 @@ const Intro = (props) => {
 
     return (
         <section>
-            <img onSubmit={handleLogin} src={logo} className={Style.Logo} />
+            <img src={logo} className={Style.Logo} />
         </section>
     )
 };
