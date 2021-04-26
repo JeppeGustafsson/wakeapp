@@ -1,4 +1,4 @@
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
 import Home from './components/Home';
 import Info from './components/Info';
@@ -56,42 +56,55 @@ function App() {
     interval();
   }, []);
 
-  return (
 
-    <div className="App">
-      <TopNav />
+
+  const DefaultRoutes = () => {
+    return (
+      <div className="App">
+        <TopNav />
+        <Switch>
+          <Route exact path="/">
+            <Intro />
+          </Route>
+          <Route exact path="/alarm-page">
+            <Home alarms={alarms} />
+          </Route>
+          <Route path="/info-page">
+            <Info />
+          </Route>
+          <Route path="/alarm-settings">
+            <SetAlarm
+              message={selectedMessage}
+              time={selectedTime}
+              date={selectedDate}
+              sound={selectedSound}
+              addAlarm={(e) => setAlarms(old => [...old, e])} />
+          </Route>
+          <Route path="/sound-settings">
+            <SetSound setSound={e => setSelectedSound(e)} />
+          </Route>
+          <Route path="/time-settings">
+            <SetMessageAndTime setMessage={e => setSelectedMessage(e)} setTime={e => setSelectedTime(e)} />
+          </Route>
+          <Route path="/date-settings">
+            <SetDate setDate={e => setSelectedDate(e)} />
+          </Route>
+        </Switch>
+      </div>
+    )
+  }
+
+  return (
+    <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Intro />
-        </Route>
-        <Route exact path="/alarm-page">
-          <Home alarms={alarms} />
-        </Route>
-        <Route path="/info-page">
-          <Info />
-        </Route>
-        <Route path="/alarm-settings">
-          <SetAlarm
-            message={selectedMessage}
-            time={selectedTime}
-            date={selectedDate}
-            sound={selectedSound}
-            addAlarm={(e) => setAlarms(old => [...old, e])} />
-        </Route>
-        <Route path="/sound-settings">
-          <SetSound setSound={e => setSelectedSound(e)} />
-        </Route>
-        <Route path="/time-settings">
-          <SetMessageAndTime setMessage={e => setSelectedMessage(e)} setTime={e => setSelectedTime(e)} />
-        </Route>
-        <Route path="/date-settings">
-          <SetDate setDate={e => setSelectedDate(e)} />
-        </Route>
         <Route path="/active-alarm">
-          <ActiveAlarm alarm={activeAlarm} />
+          <div className="App">
+            <ActiveAlarm alarm={activeAlarm} />
+          </div>
         </Route>
+        <Route component={DefaultRoutes} />
       </Switch>
-    </div>
+    </BrowserRouter>
   );
 }
 

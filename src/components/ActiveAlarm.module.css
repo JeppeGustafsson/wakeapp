@@ -6,7 +6,7 @@
 
 .waveIcon {
     max-width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 75px;
 }
 
 .alarmContainer {
@@ -18,7 +18,7 @@
     border-radius: 50%;
     border-color: var(--blue);
     border-width: 6px;
-    margin: auto;
+    margin: 0 auto 22px;
     animation: fade ease-in-out 2s   infinite alternate;
 }
 
@@ -45,7 +45,7 @@
     height: 46px;
     border: none;
     border-radius: 10px;
-    margin:90px auto 0;
+    margin:90px auto 70px;
 }
 
 .stopBtn:hover {
