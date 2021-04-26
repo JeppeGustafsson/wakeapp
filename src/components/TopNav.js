@@ -13,15 +13,15 @@ const TopNav = (props) => {
 
     const handleNav = () => {
         if (setActiveMenu(activeMenu)) {
-            
+
         } else {
-            setActive(!isActive)
+            setActiveMenu(!activeMenu)
         }
 
     }
     return (
         <div className={activeMenu === false ?
-            Style.wrap + ' wrapp'  : Style.wrapper + ' wrapper'}>
+            Style.wrap + ' wrapp' : Style.wrapper + ' wrapper'}>
             <header className={Style.header}>
 
                 <section className={activeMenu === false ?
@@ -33,27 +33,27 @@ const TopNav = (props) => {
                     <div className={Style.line}></div>
                     <div className={Style.line}></div>
                 </section>
-                </header>
-                <nav className={activeMenu === false ?
-                    Style.nav  : Style.navv}>
-                        
+            </header>
+            <nav className={activeMenu === false ?
+                Style.nav : Style.navv}>
 
-                    <section className={activeMenu === false ? 
-                    Style.close_menu + ' close-menu'  : Style.nav_menu}>
-<article className={Style.borderstyle}>
-                        <Link to="/" className={Style.link}>Home</Link>
-                        </article>
-                        <article className={Style.borderstyle}>
+
+                <section className={activeMenu === false ?
+                    Style.close_menu + ' close-menu' : Style.nav_menu}>
+                    <article className={Style.borderstyle}>
+                        <Link to="/" onClick={handleNav} className={Style.link}>Home</Link>
+                    </article>
+                    <article onClick={handleNav} className={Style.borderstyle}>
                         <Link to="/alarm-settings" className={Style.link}>Set alarm/Schedule</Link>
-                        </article>
-                        <article className={Style.borderstyle}>
+                    </article>
+                    <article onClick={handleNav} className={Style.borderstyle}>
                         <Link to="/info-page" className={Style.link}>Info</Link>
-                        </article>
-                    </section>
+                    </article>
+                </section>
 
-                </nav>
+            </nav>
 
-            
+
         </div>
     )
 };
