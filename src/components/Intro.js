@@ -1,16 +1,24 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Redirect } from 'react-router-dom';
 import Style from '../components/Intro.module.css';
-import logo from '../content/images/logo.png';
+import logo from '../content/images/logo-transparent.png';
+import line from '../content/images/lines.png';
+
+import { NavLink } from "react-router-dom";
 
 
-const Intro = (props) => {
 
+const Intro = () => {
 
 
     return (
         <section>
-            <img src={logo} className={Style.Logo} />
+            <NavLink
+                to="/alarm-page"
+                exact
+            >
+                <img src={logo} className={Style.Logo} />
+                <img src={line} className={Style.line} />
+
+            </NavLink>
         </section>
     )
 };
