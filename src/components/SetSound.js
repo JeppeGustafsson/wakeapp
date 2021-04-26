@@ -6,7 +6,6 @@ import Style from '../components/SetSound.module.css';
 
 const SetSound = (props) => {
     const [selectedPage, setSelectedPage] = useState('/sound-settings');
-    const [sounds, setSounds] = useState(['Dog barks', 'Bird sounds', 'Waves', 'Default'])
 
     const history = useHistory();
 
@@ -22,28 +21,25 @@ const SetSound = (props) => {
         );
     }
 
-    const handleRandom = (event) => {
-        let rand = Math.floor(Math.random() * sounds.length);
-        props.setSound(sounds[rand]);
-    }
-
     return (
         <main>
             <section className={Style.PickSound}>
                 <h3>Pick alarm signal</h3>
                 <Divider className="mb-2" />
-                {
-                    sounds.map(i => {
-                        return <div>
-                                <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
-                                    <h4>{i}</h4>
-                                </Button>
-                                <Divider />
-                               </div>
-                    })
-                }
-                <Button onClick={(e) => handleRandom(e)} variant="outlined" disableElevation>
-                    <h4>Random</h4>
+                <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
+                    <h4>Dog barks</h4>
+                </Button>
+                <Divider />
+                <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
+                    <h4>Bird sounds</h4>
+                </Button>
+                <Divider />
+                <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
+                    <h4>Waves</h4>
+                </Button>
+                <Divider />
+                <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
+                    <h4>Default</h4>
                 </Button>
                 <Divider />
             </section>

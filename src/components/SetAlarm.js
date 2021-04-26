@@ -52,6 +52,7 @@ const SetAlarm = (props) => {
                 </Button>
             </ButtonGroup>
             <Divider />
+            <img src={logo} className={Style.Logo} />
             <Button className={Style.Submit} onClick={() => handleClick()} color="secondary" variant="contained" disableElevation>Add alarm</Button>
         </section>
             <footer className={Style.Footer}>
