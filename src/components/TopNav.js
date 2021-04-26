@@ -44,7 +44,7 @@ const TopNav = (props) => {
                         <Link to="/alarm-page" onClick={handleNav} className={Style.link}>Home</Link>
                     </article>
                     <article onClick={handleNav} className={Style.borderstyle}>
-                        <Link to="/alarm-settings" className={Style.link}>Set alarm/Schedule</Link>
+                        <Link to="/alarm-settings" className={Style.link}>Set alarm</Link>
                     </article>
                     <article onClick={handleNav} className={Style.borderstyle}>
                         <Link to="/info-page" className={Style.link}>Info</Link>
