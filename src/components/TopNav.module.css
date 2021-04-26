@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .header {
     background-color: #2B2B2B;
     height: 75px;
@@ -86,8 +88,17 @@ nav{
     text-decoration: none;
     color: #ffffff;
     margin-top: 25px;
-    border-bottom: 1px white solid;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
 
+  .borderstyle {
+      border-bottom: 1px #ffffff30 solid;
+      width: 296px;
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
   }
 
   :global(.activee) .hamburger {
