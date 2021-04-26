@@ -1,4 +1,4 @@
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
 import { useState, useEffect, useCallback } from 'react';
 import Home from './components/Home';
 import Info from './components/Info';
@@ -54,10 +54,12 @@ function App() {
     interval();
   },[]);
 
-  return (
-    
-    <div className="App">
-      <TopNav />
+
+
+  const DefaultRoutes = () => {
+    return(
+      <div className="App">
+        <TopNav />
       <Switch>
         <Route exact path="/">
           <Home alarms={alarms} />
@@ -82,11 +84,22 @@ function App() {
         <Route path="/date-settings">
           <SetDate setDate={e => setSelectedDate(e)} />
         </Route>
-        <Route path="/active-alarm">
-          <ActiveAlarm alarm={activeAlarm} />
-        </Route>
       </Switch>
-    </div>
+      </div>
+    )
+  }
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/active-alarm">
+          <div className="App">
+          <ActiveAlarm alarm={activeAlarm} />
+          </div>
+        </Route>
+        <Route component={DefaultRoutes} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
