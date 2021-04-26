@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .header {
     background-color: #2B2B2B;
     height: 75px;
@@ -70,8 +72,8 @@ nav{
   .nav_menu {
 
     position: relative;
-    top: 411px;
-    height: 773px;
+    top: 437px;
+    height: 800px;
     background-color: #2B2B2B;
     display: flex;
     flex-direction: column;
@@ -84,8 +86,17 @@ nav{
     text-decoration: none;
     color: #ffffff;
     margin-top: 25px;
-    border-bottom: 1px white solid;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+  }
 
+  .borderstyle {
+    width: 296px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px #ffffff33 solid;
+    padding-top: 20px;
   }
 
   :global(.active) .hamburger {
@@ -111,6 +122,6 @@ section:global(.close-menu) {
     justify-content: center;
 }
 
-div:global(.wrapper) {
+/* div:global(.wrapper) {
     position: absolute;
-}
+} */

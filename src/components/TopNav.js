@@ -40,11 +40,16 @@ const TopNav = (props) => {
 
                     <section className={activeMenu === false ? 
                     Style.close_menu + ' close-menu'  : Style.nav_menu}>
+                        <article className={Style.borderstyle}>
 
                         <Link to="/alarm-settings" className={Style.link}>Favourites</Link>
+                        </article>
+                        <article className={Style.borderstyle}>
                         <Link to="/alarm-settings" className={Style.link}>Set alarm/Schedule</Link>
+                        </article>
+                        <article className={Style.borderstyle}>
                         <Link to="/alarm-settings" className={Style.link}>Info</Link>
-                  
+                        </article>
                     </section>
 
                 </nav>
