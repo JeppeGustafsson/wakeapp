@@ -41,7 +41,7 @@ const TopNav = (props) => {
                 <section className={activeMenu === false ?
                     Style.close_menu + ' close-menu' : Style.nav_menu}>
                     <article className={Style.borderstyle}>
-                        <Link to="/" onClick={handleNav} className={Style.link}>Home</Link>
+                        <Link to="/alarm-page" onClick={handleNav} className={Style.link}>Home</Link>
                     </article>
                     <article onClick={handleNav} className={Style.borderstyle}>
                         <Link to="/alarm-settings" className={Style.link}>Set alarm/Schedule</Link>
