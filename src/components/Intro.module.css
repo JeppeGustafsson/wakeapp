@@ -1,0 +1,28 @@
+.Logo {
+    height: 24rem;
+    position: relative;
+      top: 0;
+      left: 0;
+}
+
+.line {
+    height: 24rem;
+    animation-name: spin;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
