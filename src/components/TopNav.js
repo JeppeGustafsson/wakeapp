@@ -24,7 +24,7 @@ const TopNav = (props) => {
             Style.wrap + ' wrapp' : Style.wrapper + ' wrapper'}>
             <header className={Style.header}>
 
-                <section className={activeMenu === false ?
+                <div className={activeMenu === false ?
                     Style.hamburger + ' not-activee' : Style.hamburger + ' activee'}
                     onClick={activeMenu === false ?
                         () => setActiveMenu(true) :
@@ -32,7 +32,7 @@ const TopNav = (props) => {
                     <div className={Style.line}></div>
                     <div className={Style.line}></div>
                     <div className={Style.line}></div>
-                </section>
+                </div>
             </header>
             <nav className={activeMenu === false ?
                 Style.nav : Style.navv}>

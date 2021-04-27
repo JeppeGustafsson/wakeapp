@@ -9,6 +9,10 @@ const ActiveAlarm = (props) => {
 
     const history = useHistory();
 
+    const handleClick = () => {
+        history.push("/alarm-page");
+    }
+
     return (
         <section className={Style.activeAlarm}>
 
@@ -20,10 +24,10 @@ const ActiveAlarm = (props) => {
                     <img src={bell} alt="Bell" className={Style.bellIcon}></img>
                 </figure>
                 <h1 className={Style.alarmTime}>{props.alarm.time}</h1>
-                <p>Good Morning Sunshine</p>
+                <p>{props.alarm.message}</p>
             </section>
 
-            <button className={Style.stopBtn} onClick={(e) => history.push("/")}>Stop</button>
+            <button className={Style.stopBtn} onClick={() => handleClick()}>Stop</button>
 
         </section>
     )

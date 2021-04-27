@@ -20,10 +20,11 @@ const SetAlarm = (props) => {
             message: props.message,
             time: props.time,
             sound: props.sound,
-            day: props.date
+            day: props.date,
+            active: true
         }
         props.addAlarm(alarmObject);
-        history.push("/");
+        history.push("/alarm-page");
     }
 
     return (

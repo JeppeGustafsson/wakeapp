@@ -46,6 +46,7 @@
     border: none;
     border-radius: 10px;
     margin:90px auto 70px;
+    cursor: pointer;
 }
 
 .stopBtn:hover {

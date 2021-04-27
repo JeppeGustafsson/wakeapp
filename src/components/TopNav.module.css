@@ -27,6 +27,7 @@
 
 :global(.activee) .line:nth-of-type(2) {
   opacity: 0;
+  position: absolute;
 }
 
 :global(.activee) .line:nth-of-type(1) {
@@ -102,7 +103,8 @@ nav {
   position: absolute;
 }
 
-section:global(.activee) {
+section:global(.activee),
+div:global(.activee) {
   position: absolute;
   top: 46px;
 }
@@ -112,6 +114,7 @@ section:global(.activee) {
   top: 20px;
   left: 20px;
   z-index: 999;
+  cursor: pointer;
 }
 
 section:global(.close-menu) {

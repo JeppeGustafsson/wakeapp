@@ -6,7 +6,7 @@ import Style from '../components/SetSound.module.css';
 
 const SetSound = (props) => {
     const [selectedPage, setSelectedPage] = useState('/sound-settings');
-    const [sounds, setSounds] = useState(['Dog barks', 'Bird sounds', 'Waves', 'Default'])
+    const [sounds, setSounds] = useState(['Dog barks', 'Bird sounds', 'Waves', 'Default']);
 
     const history = useHistory();
 
@@ -22,7 +22,7 @@ const SetSound = (props) => {
         );
     }
 
-    const handleRandom = (event) => {
+    const handleRandom = () => {
         let rand = Math.floor(Math.random() * sounds.length);
         props.setSound(sounds[rand]);
     }

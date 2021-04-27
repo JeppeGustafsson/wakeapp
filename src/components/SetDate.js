@@ -25,7 +25,7 @@ const SetDate = (props) => {
         <main>
             <section className={Style.PickDay}>
                 <h3>Pick day for alarm</h3>
-                <Divider className="mb-2" />
+                <Divider />
                 <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
                     <h4>Monday</h4>
                 </Button>
