@@ -19,10 +19,6 @@
 
 }
 
-.Section {
-    margin-top: 50%;
-}
-
 @keyframes spin {
     from {
         transform:rotate(0deg);
