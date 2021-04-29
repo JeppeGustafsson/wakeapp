@@ -10,7 +10,7 @@ const Intro = () => {
 
 
     return (
-        <section>
+        <section className={Style.Section}>
             <NavLink
                 to="/alarm-page"
                 exact

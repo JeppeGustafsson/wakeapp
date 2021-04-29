@@ -6,13 +6,17 @@ import Alarm from "../components/Alarm"
 
 const Home = (props) => {
 
+    const handleActive = (e,j) => {
+        props.cancelAlarm(e,j)
+    }
+
     return (
         <section>
 
             <h2 className={Style.logo}>Wakeapp</h2>
             {
                 props.alarms.map(alarm => {
-                    return <Alarm message={alarm.message} time={alarm.time} day={alarm.date} />
+                    return <Alarm message={alarm.message} time={alarm.time} day={alarm.date} onClick={(e,j) => handleActive(e,j)} />
                 })
             }
         </section>

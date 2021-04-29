@@ -10,6 +10,7 @@ import ActiveAlarm from './components/ActiveAlarm';
 import './App.css';
 import TopNav from './components/TopNav';
 import Intro from './components/Intro';
+import useSound from 'use-sound';
 
 
 
@@ -19,9 +20,23 @@ function App() {
   const [selectedMessage, setSelectedMessage] = useState('Message');
   const [selectedTime, setSelectedTime] = useState('09:00');
   const [selectedDate, setSelectedDate] = useState('Monday');
-  const [selectedSound, setSelectedSound] = useState('Dog barks');
+  const [selectedSound, setSelectedSound] = useState({});
+  const [play, {stop}] = useSound(activeAlarm.sound, {volume: 1});
 
   const history = useHistory();
+
+  const handleCancel = (e,j) => {
+    stop();
+    let searchEl = alarms.filter(i => {
+      return i.message === j;
+    });
+    let newArr = alarms.filter(alarm => {
+      return alarm !== searchEl[0];
+    });
+    searchEl[0].active = e;
+    newArr.push(searchEl[0]);
+    setAlarms(newArr);
+  }
 
   function addZero(i) {
     if (i < 10) {
@@ -42,6 +57,7 @@ function App() {
     alarms.forEach(alarm => {
       if (time == alarm.time && today == alarm.day && alarm.active === true) {
         setActiveAlarm(alarm);
+        play();
         history.push("/active-alarm");
       }
     });
@@ -56,6 +72,8 @@ function App() {
     interval();
   },[triggerAlarm]);
 
+  console.log(alarms);
+
 
   return (
       <div className="App">
@@ -64,11 +82,11 @@ function App() {
             <Intro />
         </Route>
         <Route path="/active-alarm">
-            <ActiveAlarm alarm={activeAlarm} />
+            <ActiveAlarm cancelAlarm={(e,j) => handleCancel(e,j)} alarm={activeAlarm} />
         </Route>
           <Route path="/alarm-page">
             <TopNav />
-            <Home alarms={alarms} />
+            <Home cancelAlarm={(e,j) => handleCancel(e,j)} alarms={alarms} />
           </Route>
           <Route path="/info-page">
             <TopNav />

@@ -16,7 +16,9 @@
     left: 0;
 }
 
-
+.Section {
+    margin-top: 50%;
+}
 
 @keyframes spin {
     from {

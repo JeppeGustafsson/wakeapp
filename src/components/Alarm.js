@@ -4,19 +4,19 @@ import {  } from '@material-ui/icons';
 import Style from '../components/Alarm.module.css';
 
 const Alarm = (props) => {
-
-    const [cardClass, setCardClass] = useState("active");
+    const [cardClass, setCardClass] = useState(false);
 
     const changeBackground = () => {
-        if (cardClass === "inactive") {
-            setCardClass("active")
+        if (cardClass === true) {
+            setCardClass(false);
         } else {
-            setCardClass("inactive")
+            setCardClass(true);
         }
+        props.onClick(cardClass, props.message);
     }
 
     return (
-        <section className={cardClass}>
+        <section className={cardClass === false ? "active" : "inactive"}>
 
             <section className={Style.firstRow}>
 

@@ -6,7 +6,10 @@ import Style from '../components/SetSound.module.css';
 
 const SetSound = (props) => {
     const [selectedPage, setSelectedPage] = useState('/sound-settings');
-    const [sounds, setSounds] = useState(['Dog barks', 'Bird sounds', 'Waves', 'Default']);
+    const [sounds, setSounds] = useState([{name: 'Dog barks', src: '../content/sounds/dogs.mp3'}, 
+    {name: 'Bird sounds', src: '../content/sounds/birds.mp3'}, 
+    {name: 'Waves', src: '../content/sounds/waves.mp3'}, 
+    {name: 'Default', src: '../content/sounds/default.mp3'}]);
 
     const history = useHistory();
 
@@ -16,10 +19,10 @@ const SetSound = (props) => {
     };
 
     const handleClick = (event) => {
-        props.setSound(
-            event.currentTarget.firstElementChild
-            .firstElementChild.innerHTML
-        );
+        let sound = sounds.filter(i => {
+            return i.name == event.currentTarget.firstElementChild.firstElementChild.innerHTML
+        });
+        props.setSound(sound[0]);
     }
 
     const handleRandom = () => {
@@ -36,7 +39,7 @@ const SetSound = (props) => {
                     sounds.map(i => {
                         return <div>
                                 <Button onClick={(e) => handleClick(e)} variant="outlined" disableElevation>
-                                    <h4>{i}</h4>
+                                    <h4>{i.name}</h4>
                                 </Button>
                                 <Divider />
                                </div>

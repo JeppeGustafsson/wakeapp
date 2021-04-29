@@ -19,7 +19,7 @@ const SetAlarm = (props) => {
         const alarmObject = {
             message: props.message,
             time: props.time,
-            sound: props.sound,
+            sound: props.sound.src,
             day: props.date,
             active: true
         }
@@ -49,11 +49,11 @@ const SetAlarm = (props) => {
             <ButtonGroup className={Style.ButtonGroup}>
                 <Button onClick={() => history.push('/sound-settings')} variant="outlined" disableElevation>
                     <h3>Sound</h3>
-                    <h3>{props.sound}</h3>
+                    <h3>{props.sound.name}</h3>
                 </Button>
             </ButtonGroup>
             <Divider />
-            <Button className={Style.Submit} onClick={() => handleClick()} color="secondary" variant="contained" disableElevation>Add alarm</Button>
+            <Button disabled={props.message < 1 ? true : false} className={Style.Submit} onClick={() => handleClick()} color="secondary" variant="contained" disableElevation>Add alarm</Button>
         </section>
             <footer className={Style.Footer}>
                     <Radio
